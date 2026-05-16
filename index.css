@@ -278,18 +278,18 @@ nav {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-.card.card-1 { border-top-color: #333; }
-.card.card-2 { border-top-color: #444; }
-.card.card-3 { border-top-color: #555; }
-.card.card-4 { border-top-color: #666; }
-.card.card-5 { border-top-color: #777; }
-.card.card-6 { border-top-color: #888; }
+.card.card-1,
+.card.card-2,
+.card.card-3,
+.card.card-4,
+.card.card-5,
+.card.card-6 { border-top-color: var(--border); }
 
-.card.card-1:hover { border-top-color: var(--cream); }
-.card.card-2:hover { border-top-color: var(--cream); }
-.card.card-3:hover { border-top-color: var(--cream); }
-.card.card-4:hover { border-top-color: var(--cream); }
-.card.card-5:hover { border-top-color: var(--cream); }
+.card.card-1:hover,
+.card.card-2:hover,
+.card.card-3:hover,
+.card.card-4:hover,
+.card.card-5:hover,
 .card.card-6:hover { border-top-color: var(--cream); }
 
 .card-tag {
