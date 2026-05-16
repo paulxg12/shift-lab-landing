@@ -55,6 +55,14 @@ h3 { font-size: 1.8rem; font-weight: 700; }
   letter-spacing: -0.05em;
 }
 
+.highlight-red {
+  color: #fff;
+  background: #da291c;
+  display: inline-block;
+  padding: 0 6px;
+  font-weight: 900;
+}
+
 .section-label {
   color: var(--accent);
   font-size: 0.75rem;
