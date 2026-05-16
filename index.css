@@ -114,11 +114,17 @@ section {
   position: relative;
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
+}
+
+section.full {
+  max-width: 100%;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 /* Navbar */
@@ -202,24 +208,22 @@ nav {
 }
 
 /* Stats Bands */
-#stats-band {
-  padding: 3rem 2rem;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
+#stats-band,
 #outcomes-band {
-  padding: 3rem 2rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
-  margin: 0 auto;
-  max-width: 1200px;
+}
+
+#outcomes-band .stats-grid {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .stat-item {
@@ -456,15 +460,15 @@ nav {
   font-size: 1.1rem;
   margin-bottom: 2.5rem;
   font-weight: 500;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Footer */
 footer {
-  padding: 4rem 2rem 2rem;
   border-top: 1px solid var(--border);
+}
+
+footer .container {
+  padding: 4rem 0 2rem;
 }
 
 .footer-grid {
@@ -472,9 +476,6 @@ footer {
   grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
   gap: 3rem;
   margin-bottom: 4rem;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .footer-col h5 {
@@ -512,9 +513,6 @@ footer {
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 0.7rem;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Responsive */
@@ -541,8 +539,9 @@ footer {
 
   .nav-links { display: none; }
 
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .stats-grid,
+  #outcomes-band .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 }
@@ -558,5 +557,15 @@ footer {
 
   section {
     padding: 3rem 1.5rem;
+  }
+
+  .stats-grid,
+  #outcomes-band .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  footer .container {
+    padding: 3rem 0 1.5rem;
   }
 }
