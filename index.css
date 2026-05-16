@@ -61,9 +61,14 @@ h3 { font-size: 1.8rem; font-weight: 700; }
 }
 
 .highlight-red {
+  color: #da291c;
+}
+
+.hero-highlight {
   background: #da291c;
   color: #fff;
   padding: 0 4px;
+  display: inline-block;
 }
 
 .section-label {
