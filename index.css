@@ -273,19 +273,19 @@ nav {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
 }
 
-.card.card-1 { border-top-color: #da291c; }
-.card.card-2 { border-top-color: #2563eb; }
-.card.card-3 { border-top-color: #16a34a; }
-.card.card-4 { border-top-color: #9333ea; }
-.card.card-5 { border-top-color: #d97706; }
-.card.card-6 { border-top-color: #0891b2; }
+.card.card-1 { border-top-color: #333; }
+.card.card-2 { border-top-color: #444; }
+.card.card-3 { border-top-color: #555; }
+.card.card-4 { border-top-color: #666; }
+.card.card-5 { border-top-color: #777; }
+.card.card-6 { border-top-color: #888; }
 
-.card.card-1:hover { border-top-color: #ff3b2e; }
-.card.card-2:hover { border-top-color: #3b82f6; }
-.card.card-3:hover { border-top-color: #22c55e; }
-.card.card-4:hover { border-top-color: #a855f7; }
-.card.card-5:hover { border-top-color: #f59e0b; }
-.card.card-6:hover { border-top-color: #22d3ee; }
+.card.card-1:hover { border-top-color: var(--cream); }
+.card.card-2:hover { border-top-color: var(--cream); }
+.card.card-3:hover { border-top-color: var(--cream); }
+.card.card-4:hover { border-top-color: var(--cream); }
+.card.card-5:hover { border-top-color: var(--cream); }
+.card.card-6:hover { border-top-color: var(--cream); }
 
 .card-tag {
   color: var(--muted);
