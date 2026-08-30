@@ -1,19 +1,18 @@
-# shiftlab.works — AI Infrastructure Agency
+# ShiftLabs — Mission-Critical AI Infrastructure
 
-**Modern landing page for shiftlab., an AI infrastructure studio built for speed.**
+**Landing page for ShiftLabs, a specialized AI infrastructure firm serving Finance, ML, and Wildlife Conservation.**
 
-![GitHub Pages](https://img.shields.io/badge/Live-shiftlab.works-green?style=for-the-badge)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/Hosted-GitHub%20Pages-black?style=for-the-badge&logo=github)
 
 ---
 
-## What is shiftlab.?
+## What is ShiftLabs?
 
-shiftlab. replaces slow, repetitive, expensive operations with AI infrastructure — in weeks, not months.
+ShiftLabs engineers high-throughput AI infrastructure and isolated compliance engines for the world's most data-sensitive domains — Finance, ML Systems, and Wildlife Conservation.
 
-This repository contains the static landing page deployed at **[shiftlab.works](https://shiftlab.works)**.
+This repository contains the static landing page for ShiftLabs.
 
 ---
 

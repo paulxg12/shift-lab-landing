@@ -1,14 +1,20 @@
 :root {
-  --bg: #000000;
-  --surface: #0a0a0a;
-  --accent: #FAF7F4;
-  --cream: #FAF7F4;
-  --muted: #888888;
-  --border: #2A2A2A;
-  --font-display: "Times New Roman", "Times", serif;
-  --font-main: "Be Vietnam Pro", sans-serif;
-  --radius: 12px;
-  --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  --bg: #050505;
+  --bg-soft: #0a0a0a;
+  --surface: #0d0d0d;
+  --surface-2: #111111;
+  --accent: #ffffff;
+  --cream: #f5f5f0;
+  --muted: #9a9a94;
+  --muted-2: #6b6b66;
+  --line: #1f1f1f;
+  --line-strong: #3a3a3a;
+  --red: #e0401f;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-main: "Space Mono", "Be Vietnam Pro", monospace;
+  --radius: 2px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --transition: all 0.4s var(--ease);
 }
 
 * {
@@ -16,6 +22,11 @@
   padding: 0;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -29,10 +40,11 @@ body {
   font-family: var(--font-main);
   overflow-x: hidden;
   line-height: 1.6;
+  font-size: 16px;
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-main);
+  font-family: "Be Vietnam Pro", sans-serif;
   font-style: normal;
   font-weight: 900;
   letter-spacing: -0.04em;
@@ -42,7 +54,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-display) !important;
   font-style: italic !important;
   font-weight: 400 !important;
-  letter-spacing: 0;
+  letter-spacing: -0.01em;
 }
 
 .mono {
@@ -50,85 +62,20 @@ h1, h2, h3, h4 {
   text-transform: none;
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 0.95; font-weight: 900; }
-h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); line-height: 1.0; font-weight: 800; }
-h3 { font-size: 1.8rem; font-weight: 700; }
+h1 { font-size: clamp(2.75rem, 7vw, 5.25rem); line-height: 1.0; font-weight: 900; letter-spacing: -0.045em; }
+h2 { font-size: clamp(2.25rem, 5vw, 3.55rem); line-height: 1.02; font-weight: 800; letter-spacing: -0.035em; }
+h3 { font-size: 1.25rem; font-weight: 700; }
 
-.hero-title {
-  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif !important;
-  font-weight: 900;
-  letter-spacing: -0.05em;
-}
-
-.highlight-red {
-  color: #da291c;
-}
-
-.hero-highlight {
-  background: #da291c;
-  color: #fff;
-  padding: 0 4px;
-  display: inline-block;
-}
-
-.section-label {
-  color: var(--accent);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 1.5rem;
-  display: block;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 1rem 2rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  font-family: var(--font-main);
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: var(--transition);
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-.btn-primary {
-  background-color: var(--accent);
+::selection {
+  background: var(--accent);
   color: var(--bg);
-  font-weight: 700;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
-}
-
-.btn-outline {
-  border-color: var(--border);
-  color: var(--cream);
-}
-
-.btn-outline:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-.btn-dark {
-  background-color: var(--bg);
-  color: var(--cream);
-  border: 1px solid var(--border);
-}
-
-.btn-dark:hover {
-  background-color: var(--surface);
-  border-color: var(--accent);
-}
-
+/* ---------- Shared section scaffolding ---------- */
 section {
-  padding: 5rem 2rem;
+  padding: 7rem clamp(1.5rem, 6vw, 5rem);
   position: relative;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
   width: 100%;
 }
@@ -143,52 +90,177 @@ section.full {
   width: 100%;
 }
 
-/* Navbar */
+.section-head {
+  margin-bottom: 3.5rem;
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 500;
+}
+
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.section-head h2 {
+  max-width: 20ch;
+}
+
+.section-head.center {
+  text-align: center;
+}
+
+.section-head.center .section-label::before,
+.section-head.center .section-label::after {
+  content: "";
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.05rem 2.1rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+  position: relative;
+  white-space: nowrap;
+}
+
+.btn .arrow {
+  display: inline-block;
+  transition: transform 0.3s var(--ease);
+}
+
+.btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--bg);
+  border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.btn-outline {
+  border-color: var(--line-strong);
+  color: var(--cream);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn-dark {
+  background-color: transparent;
+  color: var(--cream);
+  border: 1px solid var(--line-strong);
+}
+
+.btn-dark:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ---------- Navbar ---------- */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.2rem 2rem;
+  padding: 1.35rem clamp(1.5rem, 4vw, 3.5rem);
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  border-bottom: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  background: rgba(5, 5, 5, 0.7);
+  backdrop-filter: blur(18px);
+  transition: var(--transition);
+}
+
+nav.scrolled {
+  border-bottom-color: var(--line);
+  background: rgba(5, 5, 5, 0.88);
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--accent);
   text-decoration: none;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+}
+
+.logo .logo-mark {
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+  display: inline-block;
 }
 
 .nav-links {
   display: flex;
-  gap: 3rem;
-}
-
-.nav-links a:last-child {
-  color: var(--accent);
-  font-weight: 700;
+  gap: 2.75rem;
+  align-items: center;
 }
 
 .nav-links a {
-  color: var(--cream);
+  color: var(--muted);
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: var(--transition);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.25s var(--ease);
+  position: relative;
 }
 
 .nav-links a:hover {
   color: var(--accent);
 }
 
-/* Hero */
+.nav-links a.nav-cta {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---------- Hero ---------- */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -196,45 +268,134 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 6rem;
-  padding-bottom: 2rem;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 50% -10%, rgba(255, 255, 255, 0.06), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 56px 56px, 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 30%, transparent 75%);
+  pointer-events: none;
 }
 
 .hero-content {
-  max-width: 900px;
+  max-width: 1050px;
+  position: relative;
+  z-index: 2;
 }
 
 .badge {
-  display: inline-block;
-  padding: 0.4rem 1rem;
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  border-radius: 9999px;
-  font-size: 0.7rem;
-  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+  border-radius: var(--radius);
+  font-size: 0.68rem;
+  margin-bottom: 2.5rem;
   text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.badge::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.hero-title {
+  font-family: "Be Vietnam Pro", sans-serif !important;
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  text-align: center;
+}
+
+.hero-title .accent-line {
+  display: block;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.hero-highlight {
+  color: var(--accent);
+  position: relative;
+}
+
+.hero-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.06em;
+  height: 0.08em;
+  background: var(--red);
 }
 
 .hero-sub {
   color: var(--muted);
-  max-width: 520px;
-  margin: 1.5rem auto 2.5rem;
+  max-width: 620px;
+  margin: 2rem auto 3rem;
   font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.hero-sub strong {
+  color: var(--cream);
+  font-weight: 500;
 }
 
 .hero-ctas {
   display: flex;
   gap: 1.2rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Stats Bands */
-#stats-band,
-#outcomes-band {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  padding: 3rem 2rem;
+.hero-meta {
+  margin-top: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted-2);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-meta .sep {
+  width: 1px;
+  height: 12px;
+  background: var(--line-strong);
+}
+
+/* ---------- Stats / Trust band ---------- */
+#stats-band {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 3.5rem clamp(1.5rem, 6vw, 5rem);
   text-align: center;
+  background: var(--bg-soft);
 }
 
 .stats-grid {
@@ -243,285 +404,335 @@ nav {
   gap: 3rem;
 }
 
-#outcomes-band .stats-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
-
 .stat-item {
   text-align: center;
+  padding: 0 1rem;
 }
 
 .stat-value {
-  font-family: var(--font-display);
-  font-size: 2.8rem;
-  font-style: italic;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
   display: block;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
+  color: var(--accent);
 }
 
 .stat-label {
   color: var(--muted);
-  font-size: 0.75rem;
-  text-transform: lowercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* Services - 6 cards grid */
+/* ---------- Verticals ------------- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+  gap: 1px;
+  margin-top: 1rem;
+  background: var(--line);
+  border: 1px solid var(--line);
 }
 
 .card {
-  background-color: var(--surface);
-  padding: 2rem;
-  border-top: 2px solid var(--border);
-  transition: var(--transition);
+  background-color: var(--bg);
+  padding: 2.75rem 2.25rem;
+  transition: background-color 0.4s var(--ease);
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  background-color: var(--surface);
 }
 
-.card.card-1,
-.card.card-2,
-.card.card-3,
-.card.card-4,
-.card.card-5,
-.card.card-6 { border-top-color: var(--border); }
-
-.card.card-1:hover,
-.card.card-2:hover,
-.card.card-3:hover,
-.card.card-4:hover,
-.card.card-5:hover,
-.card.card-6:hover { border-top-color: var(--cream); }
+.card-index {
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--muted-2);
+  margin-bottom: 2.5rem;
+}
 
 .card-tag {
-  color: var(--muted);
-  font-size: 0.65rem;
-  margin-bottom: 1.5rem;
+  color: var(--red);
+  font-size: 0.68rem;
+  margin-bottom: 1.25rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 .card-title {
-  font-family: var(--font-main);
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-  text-transform: uppercase;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .card-body {
   font-size: 0.85rem;
   color: var(--muted);
-  line-height: 1.5;
+  line-height: 1.7;
 }
 
-/* Process Section */
+.card-tags {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  line-height: 1.6;
+}
+
+/* ---------- Process ---------- */
 #process {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
 }
 
 .process-timeline {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-  position: relative;
-}
-
-.process-timeline::before {
-  content: "";
-  position: absolute;
-  top: 2rem;
-  left: 10%;
-  width: 80%;
-  height: 1px;
-  border-top: 1px dashed var(--accent);
-  z-index: 0;
-  opacity: 0.2;
+  gap: 0px;
+  margin-top: 1rem;
+  border: 1px solid var(--line);
+  background: var(--line);
 }
 
 .step {
+  background: var(--bg);
+  padding: 2.5rem 2rem;
   position: relative;
-  z-index: 1;
+  transition: background-color 0.4s var(--ease);
+}
+
+.step:hover {
+  background: var(--surface);
 }
 
 .step-num {
-  width: 3.5rem;
-  height: 3.5rem;
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
-  transition: var(--transition);
-}
-
-.step:hover .step-num {
-  border-color: var(--accent);
-  color: var(--accent);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--line-strong);
+  margin-bottom: 2rem;
+  line-height: 1;
 }
 
 .step-title {
-  font-size: 1.1rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
+  letter-spacing: -0.01em;
 }
 
 .step-desc {
   color: var(--muted);
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 0.82rem;
+  line-height: 1.65;
 }
 
-/* Why Us */
-#why-us {
-  border-top: 1px solid var(--border);
+/* ---------- Enterprise Moats ---------- */
+#moats {
+  border-top: 1px solid var(--line);
 }
 
-.why-container {
+.moats-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 1rem;
 }
 
-.why-statement {
-  font-size: 1.8rem;
-  line-height: 1.4;
+.moat-card {
+  background: var(--bg);
+  padding: 2.75rem 2.25rem;
+  transition: background-color 0.4s var(--ease);
+  position: relative;
 }
 
-.why-props {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+.moat-card:hover {
+  background: var(--surface);
 }
 
-.prop-item h4 {
-  font-family: var(--font-main);
-  font-style: normal;
-  font-size: 0.95rem;
-  margin-bottom: 0.8rem;
+.moat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 2.25rem;
+  right: 2.25rem;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease);
+}
+
+.moat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.moat-title {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  align-items: baseline;
+  gap: 0.75rem;
 }
 
-.prop-desc {
+.moat-title .num {
+  font-family: var(--font-main);
+  font-size: 0.7rem;
+  color: var(--red);
+  letter-spacing: 0.1em;
+}
+
+.moat-desc {
   color: var(--muted);
-  font-size: 0.8rem;
-  line-height: 1.5;
+  font-size: 0.86rem;
+  line-height: 1.7;
 }
 
-/* Founders */
+/* ---------- Leadership ---------- */
 #founders {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
 }
 
 .founders-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  margin-top: 1rem;
+  max-width: 900px;
 }
 
 .founder-card {
-  background-color: var(--surface);
-  padding: 2.5rem;
-  border: 1px solid var(--border);
-  transition: var(--transition);
-  text-align: center;
+  background: var(--bg);
+  padding: 3rem 2.5rem;
+  transition: background-color 0.4s var(--ease);
 }
 
 .founder-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-4px);
+  background: var(--surface);
 }
 
 .founder-photo {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background-color: var(--border);
-  margin: 0 auto 1.5rem;
-  border: 2px solid var(--accent);
+  background: linear-gradient(135deg, var(--line-strong), var(--surface-2));
+  margin: 0 0 2rem;
+  border: 1px solid var(--line-strong);
+  position: relative;
 }
 
 .founder-name {
-  font-size: 1.1rem;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 1.2rem;
   margin-bottom: 0.3rem;
 }
 
 .founder-title {
-  font-size: 0.75rem;
-  color: var(--muted);
+  font-size: 0.7rem;
+  color: var(--red);
   display: block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.2em;
 }
 
 .founder-quote {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.75;
   font-style: italic;
+  font-family: "DM Serif Display", Georgia, serif;
 }
 
-/* Final CTA */
+/* ---------- Final CTA ---------- */
 #final-cta {
-  background-color: #000000;
+  background-color: var(--bg);
   color: var(--cream);
-  padding: 6rem 2rem;
+  padding: 8rem clamp(1.5rem, 6vw, 5rem);
   max-width: 100%;
   text-align: center;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+}
+
+#final-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, #000 20%, transparent 75%);
+  pointer-events: none;
+}
+
+#final-cta .container {
+  position: relative;
+  z-index: 2;
 }
 
 #final-cta h2 {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5.5vw, 4.25rem);
   color: var(--cream);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 #final-cta .sub {
-  font-size: 1.1rem;
-  margin-bottom: 2.5rem;
-  font-weight: 500;
+  font-size: 1rem;
+  color: var(--muted);
+  margin-bottom: 3rem;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
 }
 
-/* Footer */
+/* ---------- Footer ---------- */
 footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--line);
+  background: var(--bg);
 }
 
 footer .container {
-  padding: 4rem 0 2rem;
+  padding: 4.5rem clamp(1.5rem, 4vw, 3rem) 2rem;
+  max-width: 1500px;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 3rem;
   margin-bottom: 4rem;
 }
 
 .footer-col h5 {
   font-family: var(--font-main);
-  font-size: 0.75rem;
-  color: var(--muted);
-  margin-bottom: 1.5rem;
+  font-size: 0.68rem;
+  color: var(--muted-2);
+  margin-bottom: 1.6rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.18em;
 }
 
 .footer-links {
@@ -529,14 +740,14 @@ footer .container {
 }
 
 .footer-links li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.85rem;
 }
 
 .footer-links a {
-  color: var(--cream);
+  color: var(--muted);
   text-decoration: none;
-  font-size: 0.85rem;
-  transition: var(--transition);
+  font-size: 0.82rem;
+  transition: color 0.25s var(--ease);
 }
 
 .footer-links a:hover {
@@ -547,44 +758,51 @@ footer .container {
   display: flex;
   justify-content: space-between;
   padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  color: var(--muted);
-  font-size: 0.7rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted-2);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-/* Responsive */
+/* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .founders-grid {
+  .process-timeline {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .process-timeline, .why-container, .why-props, .footer-grid {
+  .moats-grid,
+  .footer-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 
-  .process-timeline::before { display: none; }
-
   h1 { font-size: 3rem; }
-  h2 { font-size: 2.2rem; }
+  h2 { font-size: 2.4rem; }
 
-  #final-cta h2 { font-size: 2.5rem; }
+  #final-cta h2 { font-size: 2.75rem; }
 
   .nav-links { display: none; }
 
-  .stats-grid,
-  #outcomes-band .stats-grid {
+  .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
   }
 }
 
 @media (max-width: 640px) {
-  .services-grid {
+  .services-grid,
+  .process-timeline {
     grid-template-columns: 1fr;
   }
 
@@ -593,20 +811,21 @@ footer .container {
   }
 
   #hero {
-    min-height: 70vh;
+    min-height: 80vh;
   }
 
   section {
-    padding: 3rem 1.5rem;
+    padding: 4.5rem 1.5rem;
   }
 
-  .stats-grid,
-  #outcomes-band .stats-grid {
+  .stats-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
-  footer .container {
-    padding: 3rem 0 1.5rem;
+  .card {
+    min-height: 0;
   }
+
+  #final-cta h2 { font-size: 2.2rem; }
 }
