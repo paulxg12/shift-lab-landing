@@ -1,6 +1,6 @@
-# ShiftLabs — Mission-Critical AI Infrastructure
+# ShiftLabs — Mission-Critical Intelligence Engines
 
-**Landing page for ShiftLabs, a specialized AI infrastructure firm serving Finance, ML, and Wildlife Conservation.**
+**Landing page for ShiftLabs, specialists in intelligence engines for Finance, Legal, and Wildlife Conservation.**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -10,7 +10,7 @@
 
 ## What is ShiftLabs?
 
-ShiftLabs engineers high-throughput AI infrastructure and isolated compliance engines for the world's most data-sensitive domains — Finance, ML Systems, and Wildlife Conservation.
+ShiftLabs engineers high-throughput intelligence engines and isolated compliance systems for the world's most data-sensitive domains — Finance, Legal, and Wildlife Conservation.
 
 This repository contains the static landing page for ShiftLabs.
 
