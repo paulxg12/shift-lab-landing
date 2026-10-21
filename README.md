@@ -1,118 +1,26 @@
-# ShiftLabs — Mission-Critical Intelligence Engines
+# Shiftlab
 
-**Landing page for ShiftLabs, specialists in intelligence engines for Finance, Legal, and Wildlife Conservation.**
+Independent studio by Prince Raymond Paul: websites, business tools and practical AI for small and growing businesses.
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![GitHub Pages](https://img.shields.io/badge/Hosted-GitHub%20Pages-black?style=for-the-badge&logo=github)
+## Local preview
 
----
+Run `python3 -m http.server 8000` in this directory and open http://localhost:8000.
 
-## What is ShiftLabs?
-
-ShiftLabs engineers high-throughput intelligence engines and isolated compliance systems for the world's most data-sensitive domains — Finance, Legal, and Wildlife Conservation.
-
-This repository contains the static landing page for ShiftLabs.
-
----
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| ⚡ **No Build Step** | Pure HTML/CSS/JS — deploy anywhere |
-| 🎨 **Custom Design** | Hand-crafted CSS with dark/light logo support |
-| 📱 **Responsive** | Works on all devices |
-| 🚀 **GitHub Pages** | Automatic deployment on push to main |
-| 🔗 **Cal.com Integration** | Booking flow connected to calendar |
-
----
-
-## Tech Stack
-
-| Layer | Technology |
-|-------|-----------|
-| Structure | HTML5 |
-| Styling | CSS3 (custom, no framework) |
-| Fonts | Be Vietnam Pro, DM Serif Display, Space Mono |
-| Hosting | GitHub Pages |
-| Domain | Name.com (shiftlab.works) |
-
----
-
-## Local Development
-
-Since this is a static site, just open `index.html` in your browser:
-
-```bash
-# Open directly
-open index.html
-
-# Or use a simple server
-python3 -m http.server 8000
-# Then visit http://localhost:8000
-```
-
----
+The site is static HTML, CSS and a small progressive-enhancement script. No dependencies or build step are required. Core navigation, contact links and FAQ disclosures work without JavaScript.
 
 ## Deployment
 
-Automatically deployed via GitHub Pages:
+GitHub Pages serves the root of `main` at https://shiftlab.works. Preserve `CNAME` when updating the site; no DNS changes are required.
 
-1. Push to `main` branch
-2. GitHub Pages builds and deploys
-3. Live at `https://shiftlab.works`
+## Content and branding
 
-### DNS Configuration (Name.com)
+- `index.html`: services, founder introduction, process, FAQ and contact.
+- `index.css`: responsive layouts and paper / ink / red palette.
+- `site.js`: current footer year.
+- `assets/`: approved Shiftlab wordmark, S symbol and favicon as vector paths.
+- `founder.jpg`: existing founder photograph.
+- `projects/`: redirects from retired case-study URLs to the services section.
 
-```
-A Records (root @):
-  185.199.108.153
-  185.199.109.153
-  185.199.110.153
-  185.199.111.153
+The owner does not want projects, products or GitHub links displayed publicly on this site. Do not add them. Avoid em dashes in all public copy. Do not add client names, testimonials, business outcomes, production guarantees or credentials without evidence.
 
-CNAME (www):
-  paulxg12.github.io
-```
-
----
-
-## Project Structure
-
-```
-shift-lab-landing/
-├── index.html          # Main page
-├── index.css           # All styles
-├── logo-dark.png       # Dark mode logo
-├── logo-light.png      # Light mode logo
-├── hero-bg.png         # Hero section background
-├── CNAME               # Custom domain
-└── README.md           # This file
-```
-
----
-
-## Customization
-
-### Colors
-Edit the CSS variables in `index.css`:
-```css
-:root {
-  --primary: #yourcolor;
-  --bg: #yourbg;
-}
-```
-
-### Content
-Edit `index.html` directly — all content is in the HTML file.
-
----
-
-## License
-
-MIT License — feel free to use this as a template for your own agency site.
-
----
-
-**Built by [Prince Raymond Paul](https://github.com/paulxg12)**
+Contact remains shiftlab.global@gmail.com and the existing Cal.com booking URL.
